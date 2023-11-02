@@ -3,12 +3,12 @@ import { message } from './AntdGloble'
 import { showLoading, hideLoading } from './loading'
 import storage from './storage'
 import env from '@/config'
-import { Result } from '@/types/api'
+import { Result } from '@/types'
 
 // 创建axios实例对象
 const instance = axios.create({
   baseURL: env.baseAPI,
-  timeout: 80000,
+  timeout: 8000,
   timeoutErrorMessage: '请求超时，请稍后再试',
   withCredentials: true
 })
@@ -22,7 +22,7 @@ instance.interceptors.request.use(
       config.headers.Authorization = 'Bearer ' + token
     }
 
-    config.headers.icode = '8AA57A3DA7AF5874'
+    config.headers.icode = '8126FAA7CDD41424'
     if (env.mock) {
       config.baseURL = env.mockAPI
     } else {

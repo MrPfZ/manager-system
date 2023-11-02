@@ -13,7 +13,7 @@ export interface Result<T = any> {
   msg: string
 }
 // 通用分页列表
-export interface ResultData<T> {
+export interface ResultData<T = any> {
   list: T[]
   page: {
     pageNum: number
@@ -44,7 +44,7 @@ export namespace User {
     userEmail: string
     mobile?: number
     job?: string
-    state?: number
+    state: number
     roleList?: string[]
     deptId?: string[]
     userImg: string
@@ -81,6 +81,9 @@ export namespace Dept {
   }
   export interface DeptItem extends CreateParams {
     _id: string
+    userId: number
+    createTime: string
+    updateTime: string
     children?: DeptItem[]
   }
 }

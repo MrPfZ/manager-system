@@ -1,0 +1,33 @@
+* {
+  padding: 0; /* 清除浏览器默认样式*/
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.search-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  color: #000;
+}
+
+.base-table {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  color: #000;
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+    padding: 15px;
+    .action Button {
+      margin-left: 15px;
+    }
+  }
+}
+
+.search-form + .base-table {
+  margin-top: 20px;
+}

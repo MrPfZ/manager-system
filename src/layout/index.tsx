@@ -31,9 +31,7 @@ const App: React.FC = () => {
         <NavHeader />
         <div className={styles.content}>
           <div className={styles.wrapper}>
-            <div>
-              <Outlet></Outlet>
-            </div>
+            <Outlet></Outlet>
             <NavFooter />
           </div>
         </div>

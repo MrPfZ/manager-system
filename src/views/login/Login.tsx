@@ -1,7 +1,7 @@
 import style from './index.module.less'
 import { Button, Form, Input, App } from 'antd'
 import api from '@/api'
-import { Login } from '@/types/api'
+import { Login } from '@/types'
 import storage from '@/utils/storage'
 
 export default function LoginFC() {

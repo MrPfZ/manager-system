@@ -1,17 +1,23 @@
 import ReactDOM from 'react-dom/client'
 import Loading from './loading'
 
+let count: number = 0
+
 export const showLoading = () => {
-  // 动态创建loading的元素节点
-  const loading = document.createElement('div')
-  loading.setAttribute('id', 'loading')
-  document.body.append(loading)
-  // 渲染loading组件
-  ReactDOM.createRoot(loading).render(<Loading />)
+  if (count === 0) {
+    const loading = document.createElement('div')
+    loading.setAttribute('id', 'loading')
+    document.body.append(loading)
+    ReactDOM.createRoot(loading).render(<Loading />)
+  }
+  count++
 }
 
 export const hideLoading = () => {
-  document.body.removeChild(
-    document.getElementById('loading') as HTMLDivElement
-  )
+  count--
+  if (count === 0) {
+    document.body.removeChild(
+      document.getElementById('loading') as HTMLDivElement
+    )
+  }
 }

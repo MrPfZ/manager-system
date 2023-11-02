@@ -5,6 +5,8 @@ import Err404 from '@/views/Err404.tsx'
 import Err403 from '@/views/Err403.tsx'
 import Layout from '@/layout'
 import Dashboard from '@/views/dashboard'
+import UserList from '@/views/system/user/index'
+import DeptList from '@/views/system/dept'
 
 const route = [
   {
@@ -25,12 +27,16 @@ const route = [
       {
         path: '/dashboard',
         element: <Dashboard />
+      },
+      {
+        path: '/userList',
+        element: <UserList />
+      },
+      {
+        path: '/deptList',
+        element: <DeptList />
       }
     ]
-  },
-  {
-    path: '*',
-    element: <Navigate to='/404' />
   },
   {
     path: '/404',
@@ -39,6 +45,10 @@ const route = [
   {
     path: '/403',
     element: <Err403 />
+  },
+  {
+    path: '*',
+    element: <Navigate to='/404' />
   }
 ]
 

@@ -1,11 +1,16 @@
 import { create } from 'zustand'
-import { User } from '@/types/api'
+import { User } from '@/types'
 
 export const useStore = create<{
   token: string
   userInfo: {
     userEmail: string
     userName: string
+    userId: number
+    state: number
+    mobile: number
+    job: string
+    deptName: string
   }
   updateUserInfo: (userInfo: User.UserItem) => void
   collapsed: boolean
@@ -14,7 +19,12 @@ export const useStore = create<{
   token: '',
   userInfo: {
     userEmail: '',
-    userName: ''
+    userName: '',
+    userId: 0,
+    deptName: '',
+    mobile: 0,
+    job: '',
+    state: 0
   },
   updateUserInfo: userInfo => set({ userInfo }),
   collapsed: false,
